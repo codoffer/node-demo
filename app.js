@@ -3,6 +3,9 @@ const app = express();
 const config = require('config');
 const debug = require('debug')('app:init');
 
+app.set('view engine', 'pug');
+app.set('views', './views');
+
 //Configuration
 console.log('Application Name ' + config.get('name'));
 
@@ -21,7 +24,11 @@ const courses = [
 ];
 
 app.get('/', (req, res) => {
-  res.send('Hello World - is here !!!');
+  res.render('index', {
+    title: 'Express Application',
+    heading: 'Hello World Heading'
+  })
+  //res.send('Hello World - is here !!!');
 });
 
 app.get('/api/courses', (req, res) => {
