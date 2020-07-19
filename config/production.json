@@ -1,0 +1,6 @@
+{
+    "name": "NODE DEMO PRODUCTION",
+    "mail": {
+        "host": "prod.mail"
+    }
+}
